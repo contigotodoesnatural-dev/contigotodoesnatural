@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contigo Todo es Natural | Productos Naturales y Artesanales en Santa Cruz</title>
+  <meta name="description" content="Venta de productos naturales y artesanales en Santa Cruz de la Sierra, Bolivia. Explora nuestro catálogo y realiza tu pedido directamente por WhatsApp." />
+
+  <!-- Tipografías Google Fonts: Lora (editorial/artesanal) e Inter (legibilidad UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Lora', 'Georgia', 'serif'],
+          },
+          colors: {
+            cream: '#FAF7F2',
+            sand: '#F1EAE0',
+            earth: {
+              100: '#E7DFD3',
+              200: '#D4C7B4',
+              600: '#6E5D4F',
+              800: '#3E352E',
+              900: '#26211D',
+            },
+            forest: {
+              50: '#F2F6F3',
+              100: '#E0EBE3',
+              600: '#3A6650',
+              700: '#2D4F3E',
+              800: '#213B2E',
+            },
+            terracotta: {
+              500: '#C4744B',
+              600: '#B06139',
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-cream text-earth-900 font-sans antialiased selection:bg-forest-700 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Barra superior informativa (Ubicación y Canal Oficial) -->
+  <div class="bg-forest-800 text-cream text-xs sm:text-sm py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-earth-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Santa Cruz de la Sierra, Bolivia</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="hidden sm:inline text-earth-200">Pedidos directos por WhatsApp:</span>
+        <a href="https://wa.me/59162303765?text=Hola%20Contigo%20Todo%20es%20Natural%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="font-medium underline decoration-earth-200/60 hover:text-white transition">
+          +591 62303765
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Encabezado Principal Sticky -->
+  <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-earth-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+      
+      <!-- Encabezado Tipográfico (Sin logotipo oficial inventado) -->
+      <a href="#inicio" class="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-forest-700 rounded-lg p-1" aria-label="Inicio - Contigo Todo es Natural">
+        <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-forest-700 text-cream flex items-center justify-center shrink-0 shadow-sm group-hover:bg-forest-800 transition" aria-hidden="true">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-3.5-7-7.5-7-11.5C5 5.5 8 3 12 3s7 2.5 7 6.5c0 4-2.5 8-7 11.5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21V9m0 4l3-3m-3 6l-3-3" />
+          </svg>
+        </span>
+        <div class="flex flex-col">
+          <span class="font-serif font-bold text-lg sm:text-xl leading-tight text-forest-800 tracking-tight">Contigo</span>
+          <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-earth-600">Todo es Natural</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-earth-800" aria-label="Navegación principal">
+        <a href="#inicio" class="hover:text-forest-700 transition py-2">Inicio</a>
+        <a href="#catalogo" class="hover:text-forest-700 transition py-2">Catálogo</a>
+        <a href="#nosotros" class="hover:text-forest-700 transition py-2">Sobre Nosotros</a>
+        <a href="#contacto" class="hover:text-forest-700 transition py-2">Contacto</a>
+        <button type="button" onclick="openAdminModal()" class="inline-flex items-center gap-1.5 text-earth-600 hover:text-forest-700 bg-sand/80 hover:bg-sand px-3 py-1.5 rounded-lg border border-earth-200/70 transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span>Administrar</span>
+        </button>
+      </nav>
+
+      <!-- Acciones Derecha: Carrito + Menú Móvil -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button type="button" onclick="openCartDrawer()" class="relative inline-flex items-center gap-2 bg-forest-700 hover:bg-forest-800 text-white px-3.5 py-2.5 rounded-xl text-sm font-medium shadow-sm transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-forest-700" aria-label="Abrir carrito de pedidos">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="hidden sm:inline">Pedido</span>
+          <span id="cart-badge" class="bg-terracotta-500 text-white text-xs font-bold px-2 py-0.5 rounded-full min-w-[1.5rem] text-center">0</span>
+        </button>
+
+        <!-- Botón Menú Móvil -->
+        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl text-earth-800 hover:bg-sand border border-earth-200 transition cursor-pointer" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú de navegación">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-earth-100 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+      <a href="#inicio" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-xl text-base font-medium text-earth-900 hover:bg-sand">Inicio</a>
+      <a href="#catalogo" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-xl text-base font-medium text-earth-900 hover:bg-sand">Catálogo de Productos</a>
+      <a href="#nosotros" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-xl text-base font-medium text-earth-900 hover:bg-sand">Sobre Nosotros</a>
+      <a href="#contacto" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-xl text-base font-medium text-earth-900 hover:bg-sand">Contacto</a>
+      <div class="pt-2 border-t border-earth-100">
+        <button type="button" onclick="closeMobileMenu(); openAdminModal();" class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-forest-800 bg-forest-100/80 hover:bg-forest-100 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+          <span>Administrar Productos (Local)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- 1. SECCIÓN INICIO (Hero & Propuesta de Valor) -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-sand/70 via-cream to-cream py-10 sm:py-16 lg:py-20 border-b border-earth-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Columna de Texto -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 bg-forest-100/90 text-forest-800 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-forest-600/20">
+              <span class="w-2 h-2 rounded-full bg-forest-600"></span>
+              <span>Santa Cruz de la Sierra, Bolivia</span>
+            </div>
+
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-earth-900 leading-tight">
+              Contigo Todo es Natural: productos naturales y artesanales
+            </h1>
+
+            <p class="text-base sm:text-lg text-earth-600 leading-relaxed max-w-2xl">
+              Explora una selección pensada para quienes valoran lo natural y hecho con dedicación. Arma tu lista de pedido en bolivianos (Bs) y coordina tu compra de forma directa, rápida y personalizada a través de nuestro canal oficial de WhatsApp.
+            </p>
+
+            <!-- Botones Principales CTA -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <a href="#catalogo" class="inline-flex items-center justify-center gap-2 bg-forest-700 hover:bg-forest-800 text-white font-semibold px-6 py-3.5 rounded-xl shadow-sm transition text-center">
+                <span>Ver productos</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <a href="https://wa.me/59162303765?text=Hola%20Contigo%20Todo%20es%20Natural%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-sand text-forest-800 font-semibold px-6 py-3.5 rounded-xl border-2 border-forest-700/25 shadow-sm transition text-center">
+                <svg class="w-5 h-5 text-forest-700 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                </svg>
+                <span>Comprar por WhatsApp</span>
+              </a>
+            </div>
+
+            <!-- Propuesta de Valor (3 Pilares Claros sin promesas inventadas) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-earth-200/70">
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-forest-100 text-forest-700 shrink-0" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-sm font-semibold text-earth-900">Enfoque Natural</h2>
+                  <p class="text-xs text-earth-600 mt-0.5">Productos naturales y artesanales seleccionados.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-forest-100 text-forest-700 shrink-0" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-sm font-semibold text-earth-900">Atención Directa</h2>
+                  <p class="text-xs text-earth-600 mt-0.5">Coordinación personalizada vía WhatsApp.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-forest-100 text-forest-700 shrink-0" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-sm font-semibold text-earth-900">Cotización Clara</h2>
+                  <p class="text-xs text-earth-600 mt-0.5">Calcula tu pedido en Bs antes de escribirnos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna de Imagen Principal -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-sand aspect-[4/3]">
+              <img
+                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=80"
+                alt="Presentación ilustrativa de elementos naturales y artesanales en tonos tierra y verde"
+                onerror="this.onerror=null; this.src='https://placehold.co/800x600/E7DFD3/2D4F3E?text=Contigo+Todo+es+Natural';"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute bottom-3 left-3 right-3 bg-cream/95 backdrop-blur-sm px-4 py-2.5 rounded-2xl border border-earth-200/80 flex items-center justify-between text-xs">
+                <span class="font-medium text-earth-800">Imagen referencial de estilo natural</span>
+                <span class="text-forest-700 font-semibold">Bs · Bolivia</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Aviso de Transparencia sobre Datos de Demostración -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div id="demo-notice-banner" class="bg-amber-50/90 border border-amber-300/80 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+        <div class="flex items-start gap-3">
+          <span class="p-2 bg-amber-100 text-amber-800 rounded-xl shrink-0 mt-0.5" aria-hidden="true">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </span>
+          <div class="text-sm text-amber-950">
+            <p class="font-semibold">Catálogo con registros de DEMOSTRACIÓN editables</p>
+            <p class="text-amber-900/90 mt-0.5">
+              Los productos, categorías y precios mostrados inicialmente son ejemplos ilustrativos para visualizar la tienda. Puedes editarlos, reemplazarlos o agregar tu inventario real desde el botón <strong>Administrar</strong>.
+            </p>
+          </div>
+        </div>
+        <button type="button" onclick="openAdminModal()" class="shrink-0 bg-amber-800 hover:bg-amber-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition cursor-pointer">
+          Personalizar inventario
+        </button>
+      </div>
+    </div>
+
+    <!-- 2, 3, 4. SECCIÓN CATÁLOGO, CATEGORÍAS, BUSCADOR Y FILTROS -->
+    <section id="catalogo" class="py-10 sm:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">Explora y cotiza</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-earth-900 mt-1">Catálogo de Productos</h2>
+          <p class="text-sm text-earth-600 mt-1">Selecciona artículos para calcular tu pedido en bolivianos (Bs) o consulta directamente por WhatsApp.</p>
+        </div>
+        <div class="text-sm text-earth-600 font-medium" id="results-counter" aria-live="polite">
+          Mostrando productos...
+        </div>
+      </div>
+
+      <!-- Barra de Categorías (Editables) -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-semibold uppercase tracking-wider text-earth-600">Categorías (editables)</span>
+          <button type="button" onclick="openAdminModal('categories')" class="text-xs font-medium text-forest-700 hover:underline cursor-pointer">
+            + Editar categorías
+          </button>
+        </div>
+        <div id="category-pills" class="flex flex-wrap gap-2" role="tablist" aria-label="Filtrar por categoría">
+          <!-- Generado dinámicamente por JS -->
+        </div>
+      </div>
+
+      <!-- Panel de Buscador y Filtros Avanzados -->
+      <div class="bg-white rounded-2xl p-4 sm:p-5 border border-earth-200/80 shadow-sm mb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
+          
+          <!-- Buscador por Nombre -->
+          <div class="lg:col-span-4">
+            <label for="search-input" class="block text-xs font-semibold text-earth-800 mb-1.5">Buscar producto</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-earth-600 pointer-events-none" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </span>
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Ej. jabón, miel, infusión..."
+                class="w-full pl-10 pr-4 py-2.5 bg-cream/60 border border-earth-200 rounded-xl text-sm text-earth-900 placeholder-earth-600/60 focus:outline-none focus:ring-2 focus:ring-forest-700 focus:border-forest-700 transition"
+              />
+            </div>
+          </div>
+
+          <!-- Filtro Categoría (Select sincronizado) -->
+          <div class="lg:col-span-3">
+            <label for="category-select" class="block text-xs font-semibold text-earth-800 mb-1.5">Categoría</label>
+            <select
+              id="category-select"
+              class="w-full px-3.5 py-2.5 bg-cream/60 border border-earth-200 rounded-xl text-sm text-earth-900 focus:outline-none focus:ring-2 focus:ring-forest-700 focus:border-forest-700 transition"
+            >
+              <!-- Generado dinámicamente -->
+            </select>
+          </div>
+
+          <!-- Rango de Precios (Mín y Máx en Bs) -->
+          <div class="lg:col-span-3">
+            <span class="block text-xs font-semibold text-earth-800 mb-1.5">Rango de precio (Bs)</span>
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label for="min-price" class="sr-only">Precio mínimo en Bs</label>
+                <input
+                  type="number"
+                  id="min-price"
+                  min="0"
+                  step="1"
+                  placeholder="Mín Bs"
+                  class="w-full px-3 py-2.5 bg-cream/60 border border-earth-200 rounded-xl text-sm text-earth-900 placeholder-earth-600/60 focus:outline-none focus:ring-2 focus:ring-forest-700"
+                />
+              </div>
+              <div>
+                <label for="max-price" class="sr-only">Precio máximo en Bs</label>
+                <input
+                  type="number"
+                  id="max-price"
+                  min="0"
+                  step="1"
+                  placeholder="Máx Bs"
+                  class="w-full px-3 py-2.5 bg-cream/60 border border-earth-200 rounded-xl text-sm text-earth-900 placeholder-earth-600/60 focus:outline-none focus:ring-2 focus:ring-forest-700"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Filtro Disponibilidad + Limpiar -->
+          <div class="lg:col-span-2 flex items-center gap-2">
+            <button
+              type="button"
+              onclick="resetFilters()"
+              class="w-full py-2.5 px-4 bg-sand hover:bg-earth-200/70 text-earth-800 font-medium text-sm rounded-xl border border-earth-200 transition cursor-pointer"
+            >
+              Limpiar filtros
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Productos -->
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Tarjetas de productos renderizadas por JS -->
+      </div>
+
+      <!-- Estado Vacío cuando no hay coincidencias -->
+      <div id="empty-state" class="hidden bg-white rounded-3xl border border-earth-200 p-10 text-center max-w-lg mx-auto my-6">
+        <div class="w-14 h-14 bg-sand text-earth-600 rounded-2xl flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-bold text-earth-900">No encontramos productos con esos filtros</h3>
+        <p class="text-sm text-earth-600 mt-2">Intenta ajustar el rango de precios, cambiar de categoría o borrar el texto de búsqueda.</p>
+        <button type="button" onclick="resetFilters()" class="mt-5 inline-flex items-center gap-2 bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition cursor-pointer">
+          Mostrar todos los productos
+        </button>
+      </div>
+    </section>
+
+    <!-- 8. SECCIÓN SOBRE NOSOTROS (Honesta, sin historia inventada ni propiedades medicinales) -->
+    <section id="nosotros" class="py-12 sm:py-16 bg-sand/60 border-y border-earth-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-5 order-2 lg:order-1">
+            <div class="rounded-3xl overflow-hidden border-4 border-white shadow-md bg-cream aspect-[4/3]">
+              <img
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80"
+                alt="Elementos botánicos y artesanales representativos de Contigo Todo es Natural"
+                onerror="this.onerror=null; this.src='https://placehold.co/800x600/F1EAE0/2D4F3E?text=Sobre+Nosotros';"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 order-1 lg:order-2 space-y-5">
+            <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">Sobre Nosotros</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-earth-900">
+              Cercanía y selección natural en Santa Cruz de la Sierra
+            </h2>
+            <p class="text-base text-earth-800 leading-relaxed">
+              <strong>Contigo Todo es Natural</strong> es un emprendimiento ubicado en <strong>Santa Cruz de la Sierra, Bolivia</strong>, dedicado a la comercialización de productos naturales y artesanales.
+            </p>
+            <p class="text-base text-earth-600 leading-relaxed">
+              Nuestro enfoque se centra en brindar una experiencia de compra transparente, cercana y sencilla: puedes explorar las opciones disponibles en nuestro catálogo digital, consultar detalles específicos y coordinar directamente cada pedido a través de nuestro canal oficial de WhatsApp.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-earth-200 text-xs sm:text-sm font-medium text-earth-800">
+                <svg class="w-4 h-4 text-forest-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Productos naturales y artesanales
+              </span>
+              <span class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-earth-200 text-xs sm:text-sm font-medium text-earth-800">
+                <svg class="w-4 h-4 text-forest-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Atención directa por WhatsApp
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. SECCIÓN CONTACTO (Redirección real a WhatsApp, sin simular envío a servidor) -->
+    <section id="contacto" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        
+        <!-- Datos Oficiales -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600">Canal Directo</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-earth-900 mt-1">Contacto</h2>
+            <p class="text-sm sm:text-base text-earth-600 mt-2">
+              ¿Tienes dudas sobre disponibilidad, presentaciones o entregas en Santa Cruz? Escríbenos directamente a nuestro WhatsApp oficial.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="bg-white p-4 rounded-2xl border border-earth-200/80 flex items-start gap-4">
+              <div class="p-3 rounded-xl bg-forest-100 text-forest-700 shrink-0" aria-hidden="true">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-earth-900">WhatsApp Oficial</h3>
+                <p class="text-sm text-earth-600 mt-0.5">+591 62303765</p>
+                <a href="https://wa.me/59162303765?text=Hola%20Contigo%20Todo%20es%20Natural%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs font-semibold text-forest-700 hover:text-forest-800 underline">
+                  Abrir chat directo &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-earth-200/80 flex items-start gap-4">
+              <div class="p-3 rounded-xl bg-sand text-earth-800 shrink-0" aria-hidden="true">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-earth-900">Ubicación</h3>
+                <p class="text-sm text-earth-600 mt-0.5">Santa Cruz de la Sierra, Bolivia</p>
+                <p class="text-xs text-earth-600 mt-1">Coordinamos puntos de entrega y envíos locales por chat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario que prepara mensaje y redirige a WhatsApp -->
+        <div class="lg:col-span-7">
+          <form id="contact-form" onsubmit="handleContactSubmit(event)" class="bg-white p-6 sm:p-8 rounded-3xl border border-earth-200/90 shadow-sm space-y-5" novalidate>
+            <div class="border-b border-earth-100 pb-4">
+              <h3 class="font-serif text-xl font-bold text-earth-900">Envíanos tu consulta por WhatsApp</h3>
+              <p class="text-xs text-earth-600 mt-1">
+                Este formulario prepara tu mensaje y abre WhatsApp directamente (+591 62303765). No almacenamos datos en servidores externos.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="contact-name" class="block text-xs font-semibold text-earth-800 mb-1.5">Tu nombre *</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  required
+                  placeholder="Ej. María Pérez"
+                  class="w-full px-4 py-2.5 bg-cream/60 border border-earth-200 rounded-xl text-sm text-earth-900 focus:outline-none focus:ring-2 focus:ring-forest-700"
+                />
+              </div>
+
+              <div>
+                <label for="contact-topic" class="block text-xs font-semibold text-earth-800 mb-1.5">Motivo de consulta</label>
+                <select
+                  id="contact-topic"
+                  class="w-full px-4 py-2.5 bg-cream/60 border border-earth-200 rounded-xl text-sm text-earth-900 focus:outline-none focus:ring-2 focus:ring-forest-700"
+                >
+                  <option value="Consulta sobre disponibilidad de productos">Disponibilidad de productos</option>
+                  <option value="Consulta sobre entregas en Santa Cruz">Entregas en Santa Cruz de la Sierra</option>
+                  <option value="Pedido personalizado">Pedido personalizado</option>
+                  <option value="Otra consulta">Otra consulta</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="contact-message" class="block text-xs font-semibold text-earth-800 mb-1.5">Mensaje *</label>
+              <textarea
+                id="contact-message"
+                rows="3"
+                required
+                placeholder="Escribe aquí tu consulta..."
+                class="w-full px-4 py-2.5 bg-cream/60 border border-earth-200 rounded-xl text-sm text-earth-900 focus:outline-none focus:ring-2 focus:ring-forest-700"
+              ></textarea>
+            </div>
+
+            <p id="contact-error" class="hidden text-xs font-medium text-red-700 bg-red-50 border border-red-200 px-3.5 py-2 rounded-xl" role="alert"></p>
+
+            <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-forest-700 hover:bg-forest-800 text-white font-semibold px-6 py-3.5 rounded-xl shadow-sm transition cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+              </svg>
+              <span>Continuar en WhatsApp</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="bg-earth-900 text-earth-200 py-10 px-4 sm:px-6 lg:px-8 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-b border-earth-800 pb-8">
+      <div>
+        <p class="font-serif text-xl font-bold text-white">Contigo Todo es Natural</p>
+        <p class="text-sm text-earth-200/80 mt-1">Productos naturales y artesanales · Santa Cruz de la Sierra, Bolivia</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://wa.me/59162303765" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-forest-700 hover:bg-forest-600 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition">
+          <span>WhatsApp: +591 62303765</span>
+        </a>
+        <button type="button" onclick="openAdminModal()" class="inline-flex items-center gap-2 bg-earth-800 hover:bg-earth-800/80 text-earth-100 text-sm font-medium px-4 py-2.5 rounded-xl border border-earth-600/40 transition cursor-pointer">
+          <span>Administración Local</span>
+        </button>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-earth-200/70">
+      <p>Moneda referencial: Bolivianos (Bs). No se procesan pagos electrónicos en este sitio.</p>
+      <p>Los artículos marcados como "DEMOSTRACIÓN" son editables desde el panel local.</p>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante de WhatsApp (Acceso rápido en móviles) -->
+  <a
+    id="floating-whatsapp-btn"
+    href="https://wa.me/59162303765?text=Hola%20Contigo%20Todo%20es%20Natural%2C%20quisiera%20consultar%20sobre%20sus%20productos."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp al +591 62303765"
+    class="fixed bottom-5 right-5 z-30 bg-forest-700 hover:bg-forest-800 text-white p-3.5 rounded-full shadow-lg border-2 border-white/80 transition transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-forest-700"
+  >
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+    </svg>
+  </a>
+
+  <!-- Barra Inferior Rápida de Pedido en Móviles (Visible cuando hay artículos en el carrito) -->
+  <div id="mobile-sticky-cart" class="fixed bottom-0 inset-x-0 z-30 sm:hidden hidden bg-white/95 backdrop-blur-md border-t border-earth-200 px-4 py-3 shadow-lg">
+    <div class="flex items-center justify-between gap-3">
+      <div>
+        <span id="mobile-sticky-count" class="text-xs font-medium text-earth-600 block">0 producto(s)</span>
+        <span id="mobile-sticky-subtotal" class="text-base font-bold text-forest-800">Bs 0.00</span>
+      </div>
+      <button type="button" onclick="openCartDrawer()" class="inline-flex items-center gap-2 bg-forest-700 hover:bg-forest-800 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-sm transition cursor-pointer">
+        <span>Ver pedido y WhatsApp</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 5. MODAL DETALLE DEL PRODUCTO -->
+  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-earth-900/60 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modal-product-title">
+    <div class="bg-cream rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-earth-200 relative">
+      <button type="button" onclick="closeProductModal()" class="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-earth-800 p-2 rounded-full shadow-sm border border-earth-200 transition cursor-pointer" aria-label="Cerrar detalle del producto">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div id="product-modal-content" class="p-6 sm:p-8">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 & 7. DRAWER CARRITO DE COMPRAS Y PEDIDO WHATSAPP -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden justify-end bg-earth-900/60 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+    <div class="bg-cream w-full max-w-md h-full flex flex-col shadow-2xl border-l border-earth-200">
+      
+      <!-- Header Carrito -->
+      <div class="px-6 py-4 bg-white border-b border-earth-200 flex items-center justify-between">
+        <div>
+          <h2 id="cart-drawer-title" class="font-serif text-xl font-bold text-earth-900">Tu Pedido</h2>
+          <p class="text-xs text-earth-600">Calculado en Bolivianos (Bs)</p>
+        </div>
+        <button type="button" onclick="closeCartDrawer()" class="p-2 rounded-xl text-earth-600 hover:bg-sand hover:text-earth-900 transition cursor-pointer" aria-label="Cerrar carrito">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Lista de Ítems -->
+      <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <!-- Renderizado por JS -->
+      </div>
+
+      <!-- Footer Carrito: Subtotal y Envío WhatsApp -->
+      <div id="cart-footer" class="p-6 bg-white border-t border-earth-200 space-y-4">
+        <div>
+          <label for="order-note" class="block text-xs font-semibold text-earth-800 mb-1">Nota opcional para tu pedido (ej. zona de entrega en Santa Cruz)</label>
+          <input
+            type="text"
+            id="order-note"
+            placeholder="Ej. Entrega cerca del 2do anillo..."
+            class="w-full px-3.5 py-2 bg-cream/70 border border-earth-200 rounded-xl text-xs text-earth-900 focus:outline-none focus:ring-2 focus:ring-forest-700"
+          />
+        </div>
+
+        <div class="flex items-center justify-between text-base font-bold text-earth-900 pt-1">
+          <span>Subtotal estimado:</span>
+          <span id="cart-subtotal" class="text-xl text-forest-800">Bs 0.00</span>
+        </div>
+
+        <p class="text-[11px] text-earth-600 leading-snug">
+          No se realizan cobros en línea. Al confirmar, se abrirá WhatsApp (+591 62303765) con el detalle listo para enviar.
+        </p>
+
+        <div class="space-y-2">
+          <button
+            type="button"
+            id="whatsapp-checkout-btn"
+            onclick="sendWhatsAppOrder()"
+            class="w-full flex items-center justify-center gap-2.5 bg-forest-700 hover:bg-forest-800 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3.5 px-5 rounded-xl shadow-sm transition cursor-pointer"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+            </svg>
+            <span>Enviar pedido por WhatsApp</span>
+          </button>
+
+          <div class="flex items-center justify-between gap-2 pt-1">
+            <button type="button" onclick="copyOrderToClipboard()" class="text-xs font-medium text-earth-700 hover:text-forest-800 underline cursor-pointer">
+              Copiar resumen de texto
+            </button>
+            <button type="button" onclick="requestClearCart()" class="text-xs font-medium text-red-700 hover:text-red-800 underline cursor-pointer">
+              Vaciar lista
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 10. MODAL DE ADMINISTRACIÓN BÁSICA (LocalStorage) -->
+  <div id="admin-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-earth-900/70 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
+    <div class="bg-cream rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl border border-earth-200 overflow-hidden">
+      
+      <!-- Header Admin -->
+      <div class="px-6 py-4 bg-white border-b border-earth-200 flex items-center justify-between gap-4">
+        <div>
+          <h2 id="admin-modal-title" class="font-serif text-xl font-bold text-earth-900">Administración Básica del Catálogo</h2>
+          <p class="text-xs text-earth-600">Edita productos, precios en Bs, imágenes, categorías y disponibilidad.</p>
+        </div>
+        <button type="button" onclick="closeAdminModal()" class="p-2 rounded-xl text-earth-600 hover:bg-sand hover:text-earth-900 transition cursor-pointer" aria-label="Cerrar panel de administración">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Aviso Crítico de Almacenamiento Local -->
+      <div class="bg-amber-50 border-b border-amber-200 px-6 py-3 text-xs text-amber-950 flex items-start gap-2.5">
+        <svg class="w-4 h-4 text-amber-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+        <p>
+          <strong>Almacenamiento local (solo demostración frontend):</strong> Los cambios realizados aquí se guardan únicamente en el navegador de este dispositivo (<code>localStorage</code>) y <strong>no se sincronizan automáticamente entre diferentes celulares o computadoras</strong>. Para publicar cambios permanentes para todos los clientes, exporta el JSON o actualiza los datos en el código fuente.
+        </p>
+      </div>
+
+      <!-- Pestañas del Panel Admin -->
+      <div class="px-6 pt-3 bg-sand/50 border-b border-earth-200 flex flex-wrap gap-2">
+        <button type="button" id="tab-btn-products" onclick="switchAdminTab('products')" class="px-4 py-2 rounded-t-xl text-xs sm:text-sm font-semibold bg-cream text-forest-800 border-t border-x border-earth-200 cursor-pointer">
+          Productos e Inventario
+        </button>
+        <button type="button" id="tab-btn-categories" onclick="switchAdminTab('categories')" class="px-4 py-2 rounded-t-xl text-xs sm:text-sm font-medium text-earth-600 hover:text-earth-900 cursor-pointer">
+          Categorías
+        </button>
+        <button type="button" id="tab-btn-backup" onclick="switchAdminTab('backup')" class="px-4 py-2 rounded-t-xl text-xs sm:text-sm font-medium text-earth-600 hover:text-earth-900 cursor-pointer">
+          Exportar / Restaurar Datos
+        </button>
+      </div>
+
+      <!-- Cuerpo Admin Scrollable -->
+      <div class="p-6 overflow-y-auto flex-1 space-y-6">
+        
+        <!-- TAB 1: PRODUCTOS -->
+        <div id="admin-tab-products" class="space-y-6">
+          <!-- Formulario Crear / Editar Producto -->
+          <form id="admin-product-form" onsubmit="handleSaveProduct(event)" class="bg-white p-5 rounded-2xl border border-earth-200 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 id="admin-form-heading" class="font-serif text-base font-bold text-earth-900">Agregar nuevo producto</h3>
+              <button type="button" id="cancel-edit-btn" onclick="resetProductForm()" class="hidden text-xs font-semibold text-earth-600 hover:text-earth-900 underline cursor-pointer">
+                Cancelar edición
+              </button>
+            </div>
+
+            <input type="hidden" id="prod-id" />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div>
+                <label for="prod-name" class="block text-xs font-semibold text-earth-800 mb-1">Nombre del producto *</label>
+                <input type="text" id="prod-name" required placeholder="Ej. Jabón artesanal neutro" class="w-full px-3.5 py-2 bg-cream/60 border border-earth-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-forest-700" />
+              </div>
+
+              <div>
+                <label for="prod-category" class="block text-xs font-semibold text-earth-800 mb-1">Categoría *</label>
+                <select id="prod-category" required class="w-full px-3.5 py-2 bg-cream/60 border border-earth-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-forest-700">
+                  <!-- Opciones dinámicas -->
+                </select>
+              </div>
+
+              <div>
+                <label for="prod-price" class="block text-xs font-semibold text-earth-800 mb-1">Precio en Bolivianos (Bs) *</label>
+                <input type="number" id="prod-price" required min="0.5" step="0.5" placeholder="Ej. 35" class="w-full px-3.5 py-2 bg-cream/60 border border-earth-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-forest-700" />
+              </div>
+
+              <div>
+                <label for="prod-availability" class="block text-xs font-semibold text-earth-800 mb-1">Disponibilidad *</label>
+                <select id="prod-availability" class="w-full px-3.5 py-2 bg-cream/60 border border-earth-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-forest-700">
+                  <option value="Disponible">Disponible</option>
+                  <option value="Bajo pedido">Bajo pedido</option>
+                  <option value="Agotado">Agotado</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="prod-type" class="block text-xs font-semibold text-earth-800 mb-1">Etiqueta de registro *</label>
+                <select id="prod-type" class="w-full px-3.5 py-2 bg-cream/60 border border-earth-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-forest-700">
+                  <option value="demo">DEMOSTRACIÓN (Ejemplo)</option>
+                  <option value="real">CATÁLOGO REAL (Confirmado)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="prod-image" class="block text-xs font-semibold text-earth-800 mb-1">URL de fotografía</label>
+                <input type="url" id="prod-image" placeholder="https://..." class="w-full px-3.5 py-2 bg-cream/60 border border-earth-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-forest-700" />
+              </div>
+            </div>
+
+            <div>
+              <label for="prod-desc" class="block text-xs font-semibold text-earth-800 mb-1">Descripción breve *</label>
+              <textarea id="prod-desc" rows="2" required placeholder="Describe presentación, peso o materiales (evita afirmaciones médicas)." class="w-full px-3.5 py-2 bg-cream/60 border border-earth-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-forest-700"></textarea>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+              <p class="text-[11px] text-earth-600">Si dejas la URL de imagen vacía, se asignará una imagen referencial automática.</p>
+              <button type="submit" class="bg-forest-700 hover:bg-forest-800 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl transition cursor-pointer">
+                Guardar producto
+              </button>
+            </div>
+          </form>
+
+          <!-- Listado Editable de Productos -->
+          <div class="space-y-3">
+            <h3 class="font-serif text-base font-bold text-earth-900">Inventario actual en este navegador</h3>
+            <div id="admin-products-list" class="divide-y divide-earth-200 bg-white rounded-2xl border border-earth-200 overflow-hidden">
+              <!-- Renderizado por JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: CATEGORÍAS -->
+        <div id="admin-tab-categories" class="hidden space-y-5">
+          <div class="bg-white p-5 rounded-2xl border border-earth-200 space-y-4">
+            <h3 class="font-serif text-base font-bold text-earth-900">Gestionar Categorías</h3>
+            <p class="text-xs text-earth-600">Crea o elimina categorías para organizar tus productos naturales y artesanales.</p>
+            <form onsubmit="handleAddCategory(event)" class="flex flex-col sm:flex-row gap-3">
+              <label for="new-category-input" class="sr-only">Nombre de nueva categoría</label>
+              <input type="text" id="new-category-input" required placeholder="Ej. Cosmética Artesanal" class="flex-1 px-4 py-2.5 bg-cream/60 border border-earth-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-forest-700" />
+              <button type="submit" class="bg-forest-700 hover:bg-forest-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition cursor-pointer">
+                Agregar categoría
+              </button>
+            </form>
+          </div>
+
+          <div id="admin-categories-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Renderizado por JS -->
+          </div>
+        </div>
+
+        <!-- TAB 3: EXPORTAR / RESTAURAR -->
+        <div id="admin-tab-backup" class="hidden space-y-5">
+          <div class="bg-white p-5 rounded-2xl border border-earth-200 space-y-4">
+            <h3 class="font-serif text-base font-bold text-earth-900">Respaldo y Transferencia de Datos</h3>
+            <p class="text-xs text-earth-600 leading-relaxed">
+              Como esta aplicación funciona sin base de datos externa, puedes copiar la configuración actual en formato JSON para respaldar tu inventario, o pegar un respaldo JSON previo para cargarlo en este navegador.
+            </p>
+            <div class="flex flex-wrap gap-2.5">
+              <button type="button" onclick="exportCatalogJSON()" class="bg-forest-700 hover:bg-forest-800 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition cursor-pointer">
+                Copiar JSON del catálogo
+              </button>
+              <button type="button" onclick="importCatalogJSON()" class="bg-sand hover:bg-earth-200 text-earth-900 border border-earth-200 text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition cursor-pointer">
+                Cargar JSON pegado
+              </button>
+              <button type="button" onclick="requestResetDemoData()" class="bg-red-50 hover:bg-red-100 text-red-800 border border-red-200 text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition cursor-pointer">
+                Restaurar ejemplos de demostración
+              </button>
+            </div>
+            <div>
+              <label for="json-output" class="block text-xs font-semibold text-earth-800 mb-1">Estructura de datos (JSON editable para importar/exportar):</label>
+              <textarea id="json-output" rows="8" class="w-full p-3 bg-cream border border-earth-200 rounded-xl font-mono text-xs text-earth-800 focus:outline-none focus:ring-2 focus:ring-forest-700"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE CONFIRMACIÓN PERSONALIZADO (Reemplaza window.confirm) -->
+  <div id="confirm-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-earth-900/70 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-earth-200 space-y-4">
+      <h3 id="confirm-modal-title" class="font-serif text-lg font-bold text-earth-900">Confirmar acción</h3>
+      <p id="confirm-modal-text" class="text-sm text-earth-600">¿Estás seguro de continuar?</p>
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button type="button" onclick="closeConfirmModal()" class="px-4 py-2 rounded-xl text-sm font-medium text-earth-700 bg-sand hover:bg-earth-200 transition cursor-pointer">
+          Cancelar
+        </button>
+        <button type="button" id="confirm-modal-accept" class="px-4 py-2 rounded-xl text-sm font-semibold text-white bg-red-700 hover:bg-red-800 transition cursor-pointer">
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICACIÓN TOAST ACCESIBLE (Reemplaza window.alert) -->
+  <div id="toast-container" class="fixed bottom-20 sm:bottom-6 left-1/2 -translate-x-1/2 z-[70] pointer-events-none flex flex-col items-center gap-2 w-full max-w-sm px-4" aria-live="polite"></div>
+
+  <!-- LÓGICA DE LA APLICACIÓN -->
+  <script>
+    /**
+     * CONFIGURACIÓN OFICIAL DEL NEGOCIO
+     * Datos verificados proporcionados por el propietario.
+     */
+    const BUSINESS_CONFIG = {
+      name: 'Contigo Todo es Natural',
+      activity: 'Venta de productos naturales y artesanales',
+      city: 'Santa Cruz de la Sierra, Bolivia',
+      whatsappNumber: '59162303765',
+      whatsappDisplay: '+591 62303765',
+      currency: 'Bs'
+    };
+
+    const STORAGE_KEYS = {
+      PRODUCTS: 'cten_products_v1',
+      CATEGORIES: 'cten_categories_v1',
+      CART: 'cten_cart_v1'
+    };
+
+    /**
+     * DATOS INICIALES DE DEMOSTRACIÓN
+     * Claramente identificados como DEMOSTRACIÓN (isDemo: true) y 100% editables.
+     * Sin afirmaciones medicinales ni certificaciones inventadas.
+     */
+    const DEFAULT_CATEGORIES = [
+      'Cuidado Personal Artesanal',
+      'Alimentos Naturales',
+      'Infusiones y Hierbas',
+      'Hogar y Aromas'
+    ];
+
+    const DEFAULT_PRODUCTS = [
+      {
+        id: 'demo-1',
+        name: 'Jabón Artesanal de Avena (Ejemplo)',
+        category: 'Cuidado Personal Artesanal',
+        price: 25.00,
+        availability: 'Disponible',
+        isDemo: true,
+        image: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&w=700&q=80',
+        description: 'Registro de demostración editable. Barra artesanal elaborada en lotes pequeños con textura suave para el cuidado diario.'
+      },
+      {
+        id: 'demo-2',
+        name: 'Miel Cruda Multifloral 500g (Ejemplo)',
+        category: 'Alimentos Naturales',
+        price: 45.00,
+        availability: 'Disponible',
+        isDemo: true,
+        image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=700&q=80',
+        description: 'Registro de demostración editable. Presentación en frasco de vidrio reutilizable de 500 gramos.'
+      },
+      {
+        id: 'demo-3',
+        name: 'Mezcla de Hierbas Aromáticas (Ejemplo)',
+        category: 'Infusiones y Hierbas',
+        price: 30.00,
+        availability: 'Disponible',
+        isDemo: true,
+        image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=700&q=80',
+        description: 'Registro de demostración editable. Selección de hojas secas aromáticas en bolsa kraft sellada.'
+      },
+      {
+        id: 'demo-4',
+        name: 'Vela Artesanal de Cera Natural (Ejemplo)',
+        category: 'Hogar y Aromas',
+        price: 55.00,
+        availability: 'Bajo pedido',
+        isDemo: true,
+        image: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80',
+        description: 'Registro de demostración editable. Vertida a mano en envase artesanal para ambientar espacios del hogar.'
+      },
+      {
+        id: 'demo-5',
+        name: 'Exfoliante Corporal Artesanal (Ejemplo)',
+        category: 'Cuidado Personal Artesanal',
+        price: 40.00,
+        availability: 'Disponible',
+        isDemo: true,
+        image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=700&q=80',
+        description: 'Registro de demostración editable. Textura granulada natural en presentación de 200 gramos.'
+      },
+      {
+        id: 'demo-6',
+        name: 'Granola Artesanal con Semillas (Ejemplo)',
+        category: 'Alimentos Naturales',
+        price: 35.00,
+        availability: 'Agotado',
+        isDemo: true,
+        image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=700&q=80',
+        description: 'Registro de demostración editable. Ejemplo de artículo marcado como agotado para visualizar estados de disponibilidad.'
+      }
+    ];
+
+    // Estado Global de la Aplicación
+    let state = {
+      products: [],
+      categories: [],
+      cart: [],
+      filters: {
+        search: '',
+        category: 'Todas',
+        minPrice: '',
+        maxPrice: ''
+      },
+      pendingConfirmCallback: null
+    };
+
+    /**
+     * Inicialización al cargar el DOM
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      loadStateFromStorage();
+      bindFilterEvents();
+      renderAll();
+    });
+
+    function loadStateFromStorage() {
+      try {
+        const savedCategories = localStorage.getItem(STORAGE_KEYS.CATEGORIES);
+        const savedProducts = localStorage.getItem(STORAGE_KEYS.PRODUCTS);
+        const savedCart = localStorage.getItem(STORAGE_KEYS.CART);
+
+        state.categories = savedCategories ? JSON.parse(savedCategories) : [...DEFAULT_CATEGORIES];
+        state.products = savedProducts ? JSON.parse(savedProducts) : [...DEFAULT_PRODUCTS];
+        state.cart = savedCart ? JSON.parse(savedCart) : [];
+      } catch (error) {
+        console.error('Error leyendo almacenamiento local:', error);
+        state.categories = [...DEFAULT_CATEGORIES];
+        state.products = [...DEFAULT_PRODUCTS];
+        state.cart = [];
+      }
+    }
+
+    function saveStateToStorage() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.CATEGORIES, JSON.stringify(state.categories));
+        localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(state.products));
+        localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(state.cart));
+      } catch (error) {
+        console.error('Error guardando en almacenamiento local:', error);
+        showToast('No se pudo guardar en el almacenamiento local del navegador.', 'error');
+      }
+    }
+
+    function renderAll() {
+      renderCategories();
+      renderProducts();
+      updateCartUI();
+      updateDemoBannerVisibility();
+    }
+
+    /**
+     * Formateo consistente de moneda Bolivianos (Bs)
+     */
+    function formatBs(amount) {
+      const num = Number(amount) || 0;
+      return `${BUSINESS_CONFIG.currency} ${num.toFixed(2)}`;
+    }
+
+    /**
+     * Escapado seguro de HTML para evitar inyección al editar campos
+     */
+    function escapeHTML(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    /**
+     * Construye enlace oficial de WhatsApp con mensaje codificado
+     */
+    function buildWhatsAppURL(message) {
+      return `https://wa.me/${BUSINESS_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+    }
+
+    function updateDemoBannerVisibility() {
+      const hasDemoItems = state.products.some(p => p.isDemo);
+      const banner = document.getElementById('demo-notice-banner');
+      if (banner) {
+        banner.classList.toggle('hidden', !hasDemoItems);
+      }
+    }
+
+    /**
+     * Renderizado de Categorías (Pills + Selects)
+     */
+    function renderCategories() {
+      const pillsContainer = document.getElementById('category-pills');
+      const filterSelect = document.getElementById('category-select');
+      const adminSelect = document.getElementById('prod-category');
+
+      const allCategories = ['Todas', ...state.categories];
+
+      // Pills
+      pillsContainer.innerHTML = allCategories.map(cat => {
+        const isActive = state.filters.category === cat;
+        const activeClasses = isActive
+          ? 'bg-forest-700 text-white border-forest-700 shadow-xs'
+          : 'bg-white text-earth-800 border-earth-200 hover:bg-sand';
+        return `
+          <button
+            type="button"
+            role="tab"
+            aria-selected="${isActive}"
+            onclick="selectCategory('${escapeHTML(cat)}')"
+            class="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium border transition cursor-pointer ${activeClasses}"
+          >
+            ${escapeHTML(cat)}
+          </button>
+        `;
+      }).join('');
+
+      // Select filtro
+      filterSelect.innerHTML = allCategories.map(cat => `
+        <option value="${escapeHTML(cat)}" ${state.filters.category === cat ? 'selected' : ''}>
+          ${escapeHTML(cat)}
+        </option>
+      `).join('');
+
+      // Select formulario admin
+      if (adminSelect) {
+        adminSelect.innerHTML = state.categories.map(cat => `
+          <option value="${escapeHTML(cat)}">${escapeHTML(cat)}</option>
+        `).join('');
+      }
+    }
+
+    function selectCategory(category) {
+      state.filters.category = category;
+      renderCategories();
+      renderProducts();
+    }
+
+    function bindFilterEvents() {
+      const searchInput = document.getElementById('search-input');
+      const categorySelect = document.getElementById('category-select');
+      const minPriceInput = document.getElementById('min-price');
+      const maxPriceInput = document.getElementById('max-price');
+
+      searchInput.addEventListener('input', (e) => {
+        state.filters.search = e.target.value.trim().toLowerCase();
+        renderProducts();
+      });
+
+      categorySelect.addEventListener('change', (e) => {
+        selectCategory(e.target.value);
+      });
+
+      minPriceInput.addEventListener('input', (e) => {
+        state.filters.minPrice = e.target.value;
+        renderProducts();
+      });
+
+      maxPriceInput.addEventListener('input', (e) => {
+        state.filters.maxPrice = e.target.value;
+        renderProducts();
+      });
+    }
+
+    function resetFilters() {
+      state.filters = { search: '', category: 'Todas', minPrice: '', maxPrice: '' };
+      document.getElementById('search-input').value = '';
+      document.getElementById('min-price').value = '';
+      document.getElementById('max-price').value = '';
+      renderCategories();
+      renderProducts();
+    }
+
+    /**
+     * Filtrado y Renderizado de Tarjetas de Productos
+     */
+    function getFilteredProducts() {
+      return state.products.filter(product => {
+        // Filtro por categoría
+        if (state.filters.category !== 'Todas' && product.category !== state.filters.category) {
+          return false;
+        }
+        // Filtro por búsqueda (nombre o descripción)
+        if (state.filters.search) {
+          const query = state.filters.search;
+          const matchName = product.name.toLowerCase().includes(query);
+          const matchDesc = product.description.toLowerCase().includes(query);
+          if (!matchName && !matchDesc) return false;
+        }
+        // Filtro por precio mínimo
+        if (state.filters.minPrice !== '' && !isNaN(Number(state.filters.minPrice))) {
+          if (Number(product.price) < Number(state.filters.minPrice)) return false;
+        }
+        // Filtro por precio máximo
+        if (state.filters.maxPrice !== '' && !isNaN(Number(state.filters.maxPrice))) {
+          if (Number(product.price) > Number(state.filters.maxPrice)) return false;
+        }
+        return true;
+      });
+    }
+
+    function getAvailabilityBadge(status) {
+      if (status === 'Disponible') {
+        return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-forest-100 text-forest-800"><span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>Disponible</span>`;
+      }
+      if (status === 'Bajo pedido') {
+        return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-900"><span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>Bajo pedido</span>`;
+      }
+      return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-stone-200 text-stone-700"><span class="w-1.5 h-1.5 rounded-full bg-stone-500"></span>Agotado</span>`;
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const emptyState = document.getElementById('empty-state');
+      const counter = document.getElementById('results-counter');
+
+      const filtered = getFilteredProducts();
+      counter.textContent = `Mostrando ${filtered.length} de ${state.products.length} productos`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(product => {
+        const isOutOfStock = product.availability === 'Agotado';
+        const singleWaMessage = `Hola *${BUSINESS_CONFIG.name}* 🌿, me gustaría consultar por este producto:\n• *${product.name}* (${formatBs(product.price)})\n¿Tienen disponibilidad?`;
+        const waLink = buildWhatsAppURL(singleWaMessage);
+        const safeImg = product.image || 'https://placehold.co/600x450/E7DFD3/2D4F3E?text=Producto+Natural';
+
+        return `
+          <article class="bg-white rounded-3xl border border-earth-200/80 shadow-xs hover:shadow-md transition flex flex-col overflow-hidden group">
+            <!-- Imagen con etiquetas -->
+            <div class="relative aspect-[4/3] bg-sand overflow-hidden">
+              <button type="button" onclick="openProductModal('${escapeHTML(product.id)}')" class="w-full h-full block text-left focus:outline-none cursor-pointer" aria-label="Ver detalle de ${escapeHTML(product.name)}">
+                <img
+                  src="${escapeHTML(safeImg)}"
+                  alt="${escapeHTML(product.name)}"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x450/E7DFD3/2D4F3E?text=Contigo+Todo+es+Natural';"
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500 ${isOutOfStock ? 'opacity-65 grayscale-[30%]' : ''}"
+                />
+              </button>
+
+              <!-- Etiqueta Demostración vs Real -->
+              <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                ${product.isDemo
+                  ? `<span class="bg-amber-100/95 text-amber-950 border border-amber-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-xs">Demostración</span>`
+                  : `<span class="bg-forest-700/95 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-xs">Catálogo</span>`
+                }
+              </div>
+
+              <div class="absolute top-3 right-3">
+                ${getAvailabilityBadge(product.availability)}
+              </div>
+            </div>
+
+            <!-- Contenido de la Tarjeta -->
+            <div class="p-5 flex-1 flex flex-col">
+              <div class="text-xs font-medium text-terracotta-600 mb-1">${escapeHTML(product.category)}</div>
+              <h3 class="font-serif text-lg font-bold text-earth-900 leading-snug">
+                <button type="button" onclick="openProductModal('${escapeHTML(product.id)}')" class="text-left hover:text-forest-700 transition cursor-pointer">
+                  ${escapeHTML(product.name)}
+                </button>
+              </h3>
+
+              <p class="text-sm text-earth-600 mt-2 line-clamp-2 flex-1">
+                ${escapeHTML(product.description)}
+              </p>
+
+              <!-- Precio y Acciones -->
+              <div class="pt-4 mt-4 border-t border-earth-100 space-y-3">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-[11px] text-earth-600 block">Precio referencial</span>
+                    <span class="text-xl font-bold text-forest-800">${formatBs(product.price)}</span>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="openProductModal('${escapeHTML(product.id)}')"
+                    class="text-xs font-semibold text-earth-700 hover:text-forest-800 underline px-2 py-1.5 cursor-pointer"
+                  >
+                    Ver ficha
+                  </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onclick="addToCart('${escapeHTML(product.id)}', 1)"
+                    ${isOutOfStock ? 'disabled' : ''}
+                    class="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold transition ${
+                      isOutOfStock
+                        ? 'bg-stone-100 text-stone-400 cursor-not-allowed'
+                        : 'bg-forest-700 hover:bg-forest-800 text-white shadow-xs cursor-pointer'
+                    }"
+                  >
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span>${isOutOfStock ? 'Agotado' : 'Agregar'}</span>
+                  </button>
+
+                  <a
+                    href="${waLink}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold bg-sand hover:bg-earth-200/80 text-forest-800 border border-earth-200 transition text-center"
+                  >
+                    <svg class="w-4 h-4 text-forest-700 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                    </svg>
+                    <span>Consultar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    /**
+     * 5. DETALLE DEL PRODUCTO (Modal con disponibilidad editable rápida y selector de cantidad)
+     */
+    function openProductModal(productId) {
+      const product = state.products.find(p => p.id === productId);
+      if (!product) return;
+
+      const modal = document.getElementById('product-modal');
+      const content = document.getElementById('product-modal-content');
+      const isOutOfStock = product.availability === 'Agotado';
+      const safeImg = product.image || 'https://placehold.co/600x450/E7DFD3/2D4F3E?text=Producto+Natural';
+
+      const singleWaMessage = `Hola *${BUSINESS_CONFIG.name}* 🌿, quisiera más información sobre:\n• *${product.name}*\n• Precio: ${formatBs(product.price)}\n• Estado mostrado: ${product.availability}`;
+
+      content.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
+          <div class="sm:col-span-5 rounded-2xl overflow-hidden bg-sand border border-earth-200 aspect-square">
+            <img
+              src="${escapeHTML(safeImg)}"
+              alt="${escapeHTML(product.name)}"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x450/E7DFD3/2D4F3E?text=Contigo+Todo+es+Natural';"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div class="sm:col-span-7 space-y-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-semibold text-terracotta-600">${escapeHTML(product.category)}</span>
+              ${product.isDemo
+                ? `<span class="bg-amber-100 text-amber-950 border border-amber-300 text-[10px] font-bold uppercase px-2 py-0.5 rounded-md">Registro de Demostración</span>`
+                : `<span class="bg-forest-100 text-forest-800 text-[10px] font-bold uppercase px-2 py-0.5 rounded-md">Catálogo</span>`
+              }
+            </div>
+
+            <h2 id="modal-product-title" class="font-serif text-2xl font-bold text-earth-900 leading-tight">
+              ${escapeHTML(product.name)}
+            </h2>
+
+            <div class="text-2xl font-bold text-forest-800">
+              ${formatBs(product.price)}
+            </div>
+
+            <p class="text-sm text-earth-700 leading-relaxed">
+              ${escapeHTML(product.description)}
+            </p>
+
+            <!-- Disponibilidad Editable -->
+            <div class="bg-sand/70 p-3.5 rounded-xl border border-earth-200/80 space-y-1.5">
+              <div class="flex items-center justify-between gap-2">
+                <label for="modal-availability-select" class="text-xs font-semibold text-earth-800">Estado de disponibilidad (editable):</label>
+                ${getAvailabilityBadge(product.availability)}
+              </div>
+              <select
+                id="modal-availability-select"
+                onchange="updateProductAvailability('${escapeHTML(product.id)}', this.value)"
+                class="w-full mt-1 px-3 py-2 bg-white border border-earth-200 rounded-lg text-xs font-medium text-earth-900 focus:outline-none focus:ring-2 focus:ring-forest-700"
+              >
+                <option value="Disponible" ${product.availability === 'Disponible' ? 'selected' : ''}>Disponible</option>
+                <option value="Bajo pedido" ${product.availability === 'Bajo pedido' ? 'selected' : ''}>Bajo pedido</option>
+                <option value="Agotado" ${product.availability === 'Agotado' ? 'selected' : ''}>Agotado</option>
+              </select>
+            </div>
+
+            <!-- Selector de Cantidad y Botones -->
+            <div class="pt-2 space-y-3">
+              <div class="flex items-center gap-3">
+                <label for="modal-qty-input" class="text-xs font-semibold text-earth-800">Cantidad:</label>
+                <div class="inline-flex items-center border border-earth-200 rounded-xl bg-white overflow-hidden">
+                  <button type="button" onclick="adjustModalQty(-1)" class="px-3 py-2 text-earth-800 hover:bg-sand font-bold cursor-pointer" aria-label="Disminuir cantidad">-</button>
+                  <input type="number" id="modal-qty-input" value="1" min="1" max="99" class="w-12 text-center text-sm font-semibold text-earth-900 focus:outline-none" />
+                  <button type="button" onclick="adjustModalQty(1)" class="px-3 py-2 text-earth-800 hover:bg-sand font-bold cursor-pointer" aria-label="Aumentar cantidad">+</button>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-2.5">
+                <button
+                  type="button"
+                  onclick="addFromModal('${escapeHTML(product.id)}')"
+                  ${isOutOfStock ? 'disabled' : ''}
+                  class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold transition ${
+                    isOutOfStock
+                      ? 'bg-stone-200 text-stone-500 cursor-not-allowed'
+                      : 'bg-forest-700 hover:bg-forest-800 text-white shadow-sm cursor-pointer'
+                  }"
+                >
+                  <span>${isOutOfStock ? 'Producto Agotado' : 'Agregar al pedido'}</span>
+                </button>
+
+                <a
+                  href="${buildWhatsAppURL(singleWaMessage)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold bg-white hover:bg-sand text-forest-800 border border-forest-700/30 transition text-center"
+                >
+                  <span>Consultar por WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('product-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function adjustModalQty(delta) {
+      const input = document.getElementById('modal-qty-input');
+      if (!input) return;
+      let val = parseInt(input.value, 10) || 1;
+      val = Math.min(99, Math.max(1, val + delta));
+      input.value = val;
+    }
+
+    function addFromModal(productId) {
+      const input = document.getElementById('modal-qty-input');
+      const qty = Math.min(99, Math.max(1, parseInt(input?.value, 10) || 1));
+      addToCart(productId, qty);
+      closeProductModal();
+    }
+
+    function updateProductAvailability(productId, newStatus) {
+      const idx = state.products.findIndex(p => p.id === productId);
+      if (idx === -1) return;
+      state.products[idx].availability = newStatus;
+      saveStateToStorage();
+      renderProducts();
+      openProductModal(productId);
+      showToast(`Disponibilidad actualizada a "${newStatus}"`, 'success');
+    }
+
+    /**
+     * 6. CARRITO DE COMPRAS (Cálculo en Bs, validación de cantidades)
+     */
+    function addToCart(productId, quantity = 1) {
+      const product = state.products.find(p => p.id === productId);
+      if (!product) return;
+
+      if (product.availability === 'Agotado') {
+        showToast('Este producto figura como agotado actualmente.', 'error');
+        return;
+      }
+
+      const validQty = Math.min(99, Math.max(1, parseInt(quantity, 10) || 1));
+      const existingItem = state.cart.find(item => item.productId === productId);
+
+      if (existingItem) {
+        existingItem.quantity = Math.min(99, existingItem.quantity + validQty);
+      } else {
+        state.cart.push({
+          productId: product.id,
+          quantity: validQty
+        });
+      }
+
+      saveStateToStorage();
+      updateCartUI();
+      showToast(`"${product.name}" agregado a tu pedido`, 'success');
+    }
+
+    function updateCartQuantity(productId, delta) {
+      const itemIndex = state.cart.findIndex(i => i.productId === productId);
+      if (itemIndex === -1) return;
+
+      const newQty = state.cart[itemIndex].quantity + delta;
+      if (newQty <= 0) {
+        removeFromCart(productId);
+        return;
+      }
+      state.cart[itemIndex].quantity = Math.min(99, newQty);
+      saveStateToStorage();
+      updateCartUI();
+    }
+
+    function removeFromCart(productId) {
+      state.cart = state.cart.filter(item => item.productId !== productId);
+      saveStateToStorage();
+      updateCartUI();
+    }
+
+    function requestClearCart() {
+      if (state.cart.length === 0) return;
+      openConfirmModal(
+        'Vaciar lista de pedido',
+        '¿Deseas retirar todos los productos seleccionados de tu pedido?',
+        () => {
+          state.cart = [];
+          saveStateToStorage();
+          updateCartUI();
+          showToast('Lista de pedido vaciada', 'info');
+        }
+      );
+    }
+
+    function calculateCartTotals() {
+      let totalItems = 0;
+      let subtotal = 0;
+      const detailedItems = [];
+
+      state.cart.forEach(cartItem => {
+        const product = state.products.find(p => p.id === cartItem.productId);
+        if (product) {
+          const lineTotal = Number(product.price) * cartItem.quantity;
+          totalItems += cartItem.quantity;
+          subtotal += lineTotal;
+          detailedItems.push({
+            product,
+            quantity: cartItem.quantity,
+            lineTotal
+          });
+        }
+      });
+
+      return { totalItems, subtotal, detailedItems };
+    }
+
+    function updateCartUI() {
+      const { totalItems, subtotal, detailedItems } = calculateCartTotals();
+      const badge = document.getElementById('cart-badge');
+      const container = document.getElementById('cart-items-container');
+      const subtotalEl = document.getElementById('cart-subtotal');
+      const checkoutBtn = document.getElementById('whatsapp-checkout-btn');
+      const mobileStickyBar = document.getElementById('mobile-sticky-cart');
+      const mobileStickyCount = document.getElementById('mobile-sticky-count');
+      const mobileStickySubtotal = document.getElementById('mobile-sticky-subtotal');
+      const floatingWaBtn = document.getElementById('floating-whatsapp-btn');
+
+      badge.textContent = totalItems;
+      subtotalEl.textContent = formatBs(subtotal);
+      checkoutBtn.disabled = detailedItems.length === 0;
+
+      if (mobileStickyBar && mobileStickyCount && mobileStickySubtotal) {
+        if (detailedItems.length > 0) {
+          mobileStickyBar.classList.remove('hidden');
+          mobileStickyCount.textContent = `${totalItems} producto(s) en tu pedido`;
+          mobileStickySubtotal.textContent = formatBs(subtotal);
+          if (floatingWaBtn) floatingWaBtn.classList.add('bottom-20', 'sm:bottom-5');
+        } else {
+          mobileStickyBar.classList.add('hidden');
+          if (floatingWaBtn) floatingWaBtn.classList.remove('bottom-20', 'sm:bottom-5');
+        }
+      }
+
+      if (detailedItems.length === 0) {
+// ... existing code ... -->
+    function exportCatalogJSON() {
+      updateJsonPreview();
+      const textarea = document.getElementById('json-output');
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast('Estructura JSON copiada al portapapeles', 'success');
+      } catch (e) {
+        showToast('Selecciona el texto del recuadro para copiarlo manualmente', 'info');
+      }
+    }
+
+    function importCatalogJSON() {
+      const textarea = document.getElementById('json-output');
+      if (!textarea) return;
+      try {
+        const parsed = JSON.parse(textarea.value);
+        if (!Array.isArray(parsed.categories) || !Array.isArray(parsed.products) || parsed.categories.length === 0) {
+          showToast('El formato JSON debe contener listas válidas de "categories" y "products".', 'error');
+          return;
+        }
+        state.categories = parsed.categories.map(c => String(c).trim()).filter(Boolean);
+        state.products = parsed.products.map((p, idx) => ({
+          id: String(p.id || `prod-${Date.now()}-${idx}`),
+          name: String(p.name || 'Producto sin nombre'),
+          category: state.categories.includes(p.category) ? p.category : state.categories[0],
+          price: Math.max(0.5, Number(p.price) || 10),
+          availability: ['Disponible', 'Bajo pedido', 'Agotado'].includes(p.availability) ? p.availability : 'Disponible',
+          isDemo: Boolean(p.isDemo),
+          image: String(p.image || 'https://placehold.co/600x450/E7DFD3/2D4F3E?text=Producto+Natural'),
+          description: String(p.description || '')
+        }));
+        state.cart = [];
+        saveStateToStorage();
+        renderAll();
+        renderAdminProductsList();
+        renderAdminCategoriesList();
+        showToast('Inventario JSON cargado correctamente en este navegador', 'success');
+      } catch (err) {
+        showToast('JSON inválido. Verifica la sintaxis antes de importar.', 'error');
+      }
+    }
+
+    function requestResetDemoData() {
+// ... existing code ... -->
